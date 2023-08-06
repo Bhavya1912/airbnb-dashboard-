@@ -17,3 +17,6 @@ Popular Locations: Explore popular neighborhoods and locations with the highest 
 Filtering and Sorting: Easily filter and sort listings based on price, location, amenities, and more.
 
 Responsive Design: The dashboard is designed to be responsive and work seamlessly across various devices.
+
+![Airbnb Dashboard](https://github.com/Bhavya1912/airbnb-dashboard-/blob/main/airbnb.png)
+
