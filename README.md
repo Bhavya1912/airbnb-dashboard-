@@ -1,22 +1,39 @@
-# airbnb-dashboard-
-The Airbnb Dashboard is a comprehensive web-based application designed to provide users with valuable insights, data visualizations, and analytics related to Airbnb rental properties. It serves as a powerful tool for both hosts and guests, offering a user-friendly interface to help them make informed decisions and optimize their experiences.
+# Airbnb Management Console (HTML/CSS/JS)
 
+This repository now includes a lightweight front-end website that connects to your Airbnb backend API for hotel management, booking flow, guests, and admin actions.
 
-# 1. Introduction
-The Airbnb Dashboard is a web application that provides an interactive and visually appealing interface for analyzing and visualizing data related to Airbnb listings. This project aims to help users gain insights into various aspects of Airbnb listings, such as price trends, occupancy rates, popular locations, and more.
+## What is included
 
-# 2. Features
-Listing Data Visualization: View key metrics and insights about Airbnb listings using interactive charts and graphs.
+- `index.html` — single-page management console UI.
+- `styles.css` — responsive dashboard styling.
+- `app.js` — API integration logic using `fetch` and Bearer auth token.
 
-Price Trends: Analyze the price trends of listings over time to identify seasonal variations and potential discounts.
+## Features in UI
 
-Occupancy Rates: Visualize occupancy rates of listings to determine high-demand periods.
+- API base URL + token configuration (saved to `localStorage`)
+- Auth actions: signup, login, refresh token
+- Hotel browsing: search + hotel info
+- Booking flow: initialize booking, status, cancellation, my bookings
+- Guest management: list, add, update, delete
+- Admin quick actions: admin hotels, rooms, inventory, reports
+- JSON response viewer for all API calls
 
-Popular Locations: Explore popular neighborhoods and locations with the highest number of listings.
+## Run locally
 
-Filtering and Sorting: Easily filter and sort listings based on price, location, amenities, and more.
+Because this is plain HTML/CSS/JS, you can run it with a static server:
 
-Responsive Design: The dashboard is designed to be responsive and work seamlessly across various devices.
+```bash
+python3 -m http.server 4173
+```
 
-![Airbnb Dashboard](https://github.com/Bhavya1912/airbnb-dashboard-/blob/main/airbnb.png)
+Then open:
 
+```text
+http://localhost:4173
+```
+
+## Notes
+
+- Ensure your backend API enables CORS for the frontend origin.
+- Paste your JWT access token into the token field after login if your response format differs.
+- Endpoint payloads may require small adjustments to match your backend DTOs exactly.

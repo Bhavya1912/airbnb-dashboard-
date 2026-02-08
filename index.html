@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb Management Console</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Airbnb Management Console</h1>
+      <p>HTML/CSS/JS client for your backend API.</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>API Configuration</h2>
+        <div class="grid-2">
+          <label>
+            Base URL
+            <input id="baseUrl" placeholder="http://localhost:8080" />
+          </label>
+          <label>
+            Access Token (Bearer)
+            <input id="accessToken" placeholder="Paste JWT token" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="saveConfig">Save config</button>
+          <button id="clearToken" class="secondary">Clear token</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Authentication</h2>
+        <div class="grid-2">
+          <label>
+            Name
+            <input id="authName" placeholder="John Doe" />
+          </label>
+          <label>
+            Email
+            <input id="authEmail" placeholder="john@example.com" />
+          </label>
+          <label>
+            Password
+            <input id="authPassword" type="password" placeholder="••••••••" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="signupBtn">Sign up</button>
+          <button id="loginBtn">Login</button>
+          <button id="refreshBtn" class="secondary">Refresh token</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Hotel Browse</h2>
+        <div class="grid-3">
+          <label>
+            City
+            <input id="searchCity" placeholder="Bengaluru" />
+          </label>
+          <label>
+            Check-in
+            <input id="searchCheckIn" type="date" />
+          </label>
+          <label>
+            Check-out
+            <input id="searchCheckOut" type="date" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="searchHotelsBtn">Search hotels</button>
+        </div>
+        <label>
+          Hotel ID (for details)
+          <input id="hotelIdInfo" placeholder="123" />
+        </label>
+        <div class="actions">
+          <button id="hotelInfoBtn" class="secondary">Get hotel info</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Booking Flow</h2>
+        <div class="grid-3">
+          <label>
+            Hotel ID
+            <input id="bookingHotelId" placeholder="101" />
+          </label>
+          <label>
+            Room ID
+            <input id="bookingRoomId" placeholder="45" />
+          </label>
+          <label>
+            Guest IDs (comma-separated)
+            <input id="bookingGuests" placeholder="1,2" />
+          </label>
+          <label>
+            Check-in
+            <input id="bookingCheckIn" type="date" />
+          </label>
+          <label>
+            Check-out
+            <input id="bookingCheckOut" type="date" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="initBookingBtn">Initialize booking</button>
+          <button id="myBookingsBtn" class="secondary">My bookings</button>
+        </div>
+
+        <label>
+          Booking ID
+          <input id="bookingId" placeholder="987" />
+        </label>
+        <div class="actions">
+          <button id="bookingStatusBtn" class="secondary">Get booking status</button>
+          <button id="cancelBookingBtn" class="danger">Cancel booking</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Guest Management</h2>
+        <div class="grid-3">
+          <label>
+            Guest ID
+            <input id="guestId" placeholder="456" />
+          </label>
+          <label>
+            Guest name
+            <input id="guestName" placeholder="Alex" />
+          </label>
+          <label>
+            Gender
+            <input id="guestGender" placeholder="MALE/FEMALE" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="listGuestsBtn">Get my guests</button>
+          <button id="addGuestBtn">Add guest</button>
+          <button id="updateGuestBtn" class="secondary">Update guest</button>
+          <button id="deleteGuestBtn" class="danger">Delete guest</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Admin Quick Actions</h2>
+        <p class="muted">Requires an admin token.</p>
+        <div class="grid-2">
+          <label>
+            Admin Hotel ID
+            <input id="adminHotelId" placeholder="777" />
+          </label>
+          <label>
+            Admin Room ID
+            <input id="adminRoomId" placeholder="22" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="adminHotelsBtn">Get all admin hotels</button>
+          <button id="adminRoomsBtn" class="secondary">Get hotel rooms</button>
+          <button id="inventoryBtn" class="secondary">Get room inventory</button>
+          <button id="reportsBtn" class="secondary">Get booking report</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Response</h2>
+        <pre id="response"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
